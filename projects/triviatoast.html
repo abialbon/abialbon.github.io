@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trivia Toast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <script src="https://unpkg.com/vue"></script>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
+      nav {
+        position: fixed;
+        z-index: 99;
+      }
+      a {
+        margin: 0.3rem auto;
+      }
+      .space {
+        height: 64px;
+      }
+      .card-title {
+        text-align: center;
+        padding-bottom: 1.8rem;
+      }
+      .scoreboard {
+        position: fixed;
+        width: 90px;
+        height: 40px;
+        top: 0;
+        right: 10px;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .reload {
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+      <div class="scoreboard white z-depth-2">
+        <div>
+          Score: {{score}}
+        </div>
+      </div>
+      <nav>
+        <div class="nav-wrapper black">
+          <div class="left reload" @click="fetchq"><i class="material-icons">shuffle</i></div>Reload
+          <a href="#" class="brand-logo center">Trivia <span class="bold">Toast</span></a>
+        </div>
+      </nav>
+      <div class="space">
+
+      </div>
+        <question v-on:scored="changescore" v-for="(result, index) in trivia.results" v-bind:questiondata="result" v-bind:correct-answer='result.correct_answer' :index='index'></question>
+    </div>
+    <footer class="page-footer black">
+          <div class="footer-copyright">
+            <div class="container">
+            <span class="bold">Thanks to <a href="https://opentdb.com/">Open Trivia Database</a></span><br />
+            <span class="bold">Made by <a href="https://abialbon.js.org/">Abialbon Paul</a></span>
+          </div>
+        </footer>
+</body>
+
+<script>
+    var question = Vue.component('question', {
+        template: `
+    <div class="row">
+      <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <div class="card hoverable">
+          <div class="card-content">
+            <span class="card-title">{{index+1 }}. {{stem}}</span>
+              <div class="row">
+                <a class="waves-effect waves-light btn accent-3 col s10 offset-s1" v-for="(option, i) in shuffled" @click="markCorrect(i)" v-bind:class='style["color"+i]'>{{option}} </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `,
+        props: ['questiondata', 'correctAnswer', 'index'],
+        data() {
+            return {
+                stem: '',
+                options: [],
+                shuffled: [],
+                answer: '',
+                style: {
+                    color0: 'light-blue',
+                    color1: 'light-blue',
+                    color2: 'light-blue',
+                    color3: 'light-blue'
+                }
+            }
+        },
+        methods: {
+            populate(questiondata) {
+                this.stem = atob(questiondata.question);
+                this.options[0] = atob(questiondata.correct_answer);
+                this.answer = atob(questiondata.correct_answer);
+                this.options[1] = atob(questiondata.incorrect_answers[0]);
+                this.options[2] = atob(questiondata.incorrect_answers[1]);
+                this.options[3] = atob(questiondata.incorrect_answers[2]);
+            },
+            // checkAnswer(option) {
+            //     if (option == this.answer) {
+            //         console.log('correct');
+            //     } else {
+            //         console.log('wrong');
+            //     }
+            // },
+            shuffle(array) {
+                var currentIndex = array.length,
+                    temporaryValue, randomIndex;
+
+                // While there remain elements to shuffle...
+                while (0 !== currentIndex) {
+
+                    // Pick a remaining element...
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+
+                    // And swap it with the current element.
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+
+                this.shuffled = array;
+            },
+            markCorrect(i) {
+                var d = this.shuffled.indexOf(this.answer);
+                if (i == d) {
+                    var c = 'color' + d;
+                    this.style[c] = 'teal';
+                    this.$emit('scored');
+                } else {
+                    var c = 'color' + i;
+                    this.style[c] = 'red';
+                }
+            }
+        },
+        mounted() {
+            this.populate(this.questiondata);
+            this.shuffle(this.options);
+        }
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            title: "Trivia",
+            tcorrect: 0,
+            trivia: {}
+          },
+        methods: {
+            fetchq() {
+                this.tcorrect = 0;
+                this.trivia = {};
+                $.getJSON('https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple&encode=base64', function(data) {
+                    app.trivia = data;
+                })
+            },
+            changescore() {
+              this.tcorrect += 1;
+            }
+        },
+        computed: {
+            score() {
+            return (this.tcorrect/ 10) * 10;
+            }
+        },
+        components: {
+            question
+        },
+        created() {
+          this.fetchq();
+        }
+    });
+</script>
+</html>

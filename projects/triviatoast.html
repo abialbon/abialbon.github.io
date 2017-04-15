@@ -99,6 +99,7 @@
                 options: [],
                 shuffled: [],
                 answer: '',
+                answered: false,
                 style: {
                     color0: 'light-blue',
                     color1: 'light-blue',
@@ -143,15 +144,20 @@
                 this.shuffled = array;
             },
             markCorrect(i) {
+              if (this.answered) {
+                return
+              } else {
                 var d = this.shuffled.indexOf(this.answer);
                 if (i == d) {
                     var c = 'color' + d;
                     this.style[c] = 'teal';
                     this.$emit('scored');
+                    this.answered = true;
                 } else {
                     var c = 'color' + i;
                     this.style[c] = 'red';
                 }
+              }
             }
         },
         mounted() {

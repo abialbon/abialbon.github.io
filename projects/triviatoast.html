@@ -117,13 +117,6 @@
                 this.options[2] = atob(questiondata.incorrect_answers[1]);
                 this.options[3] = atob(questiondata.incorrect_answers[2]);
             },
-            // checkAnswer(option) {
-            //     if (option == this.answer) {
-            //         console.log('correct');
-            //     } else {
-            //         console.log('wrong');
-            //     }
-            // },
             shuffle(array) {
                 var currentIndex = array.length,
                     temporaryValue, randomIndex;
@@ -177,7 +170,7 @@
             fetchq() {
                 this.tcorrect = 0;
                 this.trivia = {};
-                $.getJSON('https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple&encode=base64', function(data) {
+                $.getJSON('https://opentdb.com/api.php?amount=10&type=multiple&encode=base64', function(data) {
                     app.trivia = data;
                 })
             },

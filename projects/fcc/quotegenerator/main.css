@@ -1,0 +1,123 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  color: white;
+  font-family: 'Avenir', sans-serif;
+  margin: 0;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.slide {
+  display: none;
+  padding: 28px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  width: 30vw;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.slide ul {
+  padding: 0;
+}
+
+.slide ul li {
+  list-style: none;
+  padding: 12px 0 12px;
+  border-bottom: 0.5px grey solid;
+}
+
+.slide ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7)
+}
+
+.slide ul li a i {
+  text-align: center;
+  width: 40px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.main-flexbox {
+  display: flex;
+  height: 55vh;
+  width: 70%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.quoteby {
+  padding: 10px;
+  flex: 1;
+  text-align: right;
+}
+
+.quote {
+  font-size: 1.5rem;
+  flex: 3;
+  text-align: left;
+  padding: 10px;
+  border-left: 1px white solid;
+}
+
+.footer-flex {
+  display: flex;
+  height: 20vh;
+  width: 70%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn {
+  background-color: white;
+  border: none;
+  color: darkblue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.btn:last-child {
+  margin: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .main-flexbox {
+    padding-top: 10vh;
+    flex-flow: column-reverse;
+    height: 45vh;
+  }
+  .quote {
+    flex: 1;
+    border: none;
+  }
+  .slide {
+    width: 70%;
+  }
+}

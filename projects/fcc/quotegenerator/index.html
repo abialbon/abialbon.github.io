@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Random Quote Generator</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://use.fontawesome.com/a0491be648.js"></script>
+  <script>
+    window.twttr = (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      t._e = [];
+      t.ready = function (f) {
+        t._e.push(f);
+      };
+      return t;
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+
+<body>
+  <span class="close" id="close"><i class="fa fa-bars fa-lg"></i></span>
+  <div class="slide">
+    <div class="logo"><a href="https://abialbon.js.org">Abialbon Paul</a></div>
+    <ul>
+      <li><a href="https://www.facebook.com/abialbon.paul" target="_blank"><i class="fa fa-facebook fa-lg"></i> Facebook</a></li>
+      <li><a href="https://twitter.com/abialbonpaul" target="_blank"><i class="fa fa-twitter fa-lg"></i> Twitter</a></li>
+      <li><a href="https://www.linkedin.com/in/abialbon/" target="_blank"><i class="fa fa-linkedin fa-lg"></i> LinkedIn</a></li>
+      <li><a href="https://github.com/abialbon" target="_blank"><i class="fa fa-github fa-lg"></i> Github</a></li>
+      <li><a href="https://www.freecodecamp.com/abialbon" target="_blank"><i class="fa fa-free-code-camp fa-lg"></i> FreeCodeCamp</a></li>
+    </ul>
+  </div>
+
+  <div id="app">
+    <div class="main-flexbox">
+      <div class="quoteby">{{quotes[qindex].author}}</div>
+      <div class="quote">{{quotes[qindex].quote}} </br>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <div class="btn" @click="nextQuote">Next Quote</div>
+      <div class="btn" @click="tweet"><i class="fa fa-twitter fa-lg"></i></div>
+    </div>
+
+    <div class="footer-flex">
+      <h2>Random Quote Generator</h2>
+      <h4>by <a href="https://abialbon.js.org">Abialbon Paul</a></h4>
+    </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

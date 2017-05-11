@@ -7,16 +7,13 @@ var getQuotes = function () {
     },
     success: function (data) {
       app.quotes = app.quotes.concat(JSON.parse(data));
-      console.log(app.quotes)
     }
   });
 }
 
-
 $('#close').on('click', function () {
   $('.slide').toggle();
 })
-
 
 var app = new Vue({
   el: '#app',
@@ -40,7 +37,6 @@ var app = new Vue({
       } else {
         this.qindex++;
       }
-      console.log(this.qindex)
     },
     tweet: function () {
       window.open(this.twQuote)
@@ -51,5 +47,6 @@ var app = new Vue({
   },
   updated: function () {
     app.twQuote = 'https://twitter.com/intent/tweet?hashtags=quotes&text=' + encodeURI(app.quotes[app.qindex].quote) + ' - ' + encodeURI(app.quotes[app.qindex].author);
+    $('.btn-container #tweetbtn a').attr('href', app.twQuote);
   }
 });

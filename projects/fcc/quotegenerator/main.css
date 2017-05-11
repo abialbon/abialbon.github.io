@@ -106,7 +106,9 @@ a {
 .btn:last-child {
   margin: 20px;
 }
-
+#tweetbtn a {
+  color: rgba(51, 18, 108, 0.9);
+}
 @media only screen and (max-width: 500px) {
   .main-flexbox {
     padding-top: 10vh;
@@ -116,6 +118,7 @@ a {
   .quote {
     flex: 1;
     border: none;
+    font-size: 1.2rem;
   }
   .slide {
     width: 70%;

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="/main.css">
+    <script src="/script.js"></script>
+</head>
+<body>
+
+	<div class="spinner">
+		<div class="preload">
+			<div class="preloader-wrapper big active">
+				<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div><div class="gap-patch">
+					<div class="circle"></div>
+				</div><div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p id="preload-text">Scanning the sky above you!</p>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div class="row">
+			<div class="col s10 m6 l4 push-s1 push-m3 push-l4">
+				<div class="card">
+					<div class="card-content">
+						<div class="location">
+							<span id="location">Location</span>
+						</div>
+						<div class="suntimes">
+							<span id="sunrise"></span> <br/>
+							<span id="sunset"></span>
+						</div>
+					</div>
+					<div class="card-image">
+						<img class="responsive-img" src="" alt="Weather Icon">
+						<div class="temp-flex">
+							<span id="temperature" class="temperature">0&degF</span>
+						</div>
+
+					</div>
+					<div class="card-content">
+						<h5 id="description"></h5>
+						<form>
+							<input name="temp" type="radio" value="cel" id="cel" checked />
+							<label for="cel">Celsius</label>
+							<input name="temp" type="radio" value="fah" id="fah" />
+							<label for="fah">Fahrenheit</label>
+						</form>		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="flexbox">
+		<h5>Weather App</h5>
+		<h6>by Abialbon Paul</h6>
+	</div>
+</body>
+</html>

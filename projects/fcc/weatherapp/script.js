@@ -82,7 +82,6 @@ $(document).ready(function(){
 
     // Temp conversions
     $('input[name=temp]').on('click', function(val){ 
-        console.log(val.target.value) 
         if (val.target.value == 'fah') {
             updateHTML('#temperature', toFahrenheit(weatherData.main.temp))
         } else {

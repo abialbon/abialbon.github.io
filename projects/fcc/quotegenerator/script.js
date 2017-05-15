@@ -6,7 +6,6 @@ var getQuotes = function () {
       'X-Mashape-Key': 'X7E4CWYMQ6msh7t9bo6bqBiyrmOop1qbIJTjsnlmSQtfy9M1kq'
     },
     success: function (data) {
-      console.log(data)
       app.quotes = app.quotes.concat(data);
     }
   });

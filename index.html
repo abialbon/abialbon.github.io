@@ -8,25 +8,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Satisfy" rel="stylesheet">
   <link rel="stylesheet" href="/styles/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
   <nav class="navbar is-primary">
       <div class="container">
           <div class="navbar-brand">
-          <a href="#" class="navbar-item"><h1 class="title has-text-white">Paulnotes</h1></a>
-            <button class="button navbar-burger is-primary">
+          <a href="#" class="navbar-item"><h1 class="title has-text-white">Abialbon Paul</h1></a>
+            <button class="button navbar-burger is-primary" id="navBurger">
               <span></span>
               <span></span>
               <span></span>
             </button>
       </div>
-      <div class="navbar-menu">
+      <div class="navbar-menu" id="navMenu">
          <div class="navbar-end">
-            <a href="#" class="navbar-item">About</a>
-            <a href="#" class="navbar-item">Skills</a>
-            <a href="#" class="navbar-item">Projects</a>
-            <a href="#" class="navbar-item">Contact</a>
+            <a href="#about" class="navbar-item">About</a>
+            <a href="#skills" class="navbar-item">Skills</a>
+            <a href="#projects" class="navbar-item">Projects</a>
+            <a href="#contact" class="navbar-item">Contact</a>
          </div>
       </div>
       </div>
@@ -40,7 +41,7 @@
       <img class="welcome-svg" src="./assets/background.svg" alt="">
   </section>
   
-  <section class="about">
+  <section class="about" id="about">
       <div class="container">
           <div class="columns">
               <div class="column is-one-third">
@@ -50,7 +51,7 @@
                   <div class="about-title">
                       <h1 class="title">A different kind</h1>
                       <h3 class="extra-info">I dont <span>run</span> on coffee</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor. Maecenas eu ligula ante. Etiam eu magna faucibus, eleifend dolor non, aliquam neque. Suspendisse potenti. Etiam non dui vestibulum mi aliquam varius. Morbi leo lectus, tempus id laoreet id, sollicitudin a est. Aenean suscipit, magna non tincidunt mollis, magna odio euismod sapien, nec vehicula mi quam eu libero</p>
+                      <p>I am Abialbon Paul, a physician into Pharmacology research and currently an assistant professor in a medical school. I graduated from one of top three medical schools in India with many accolades. Yet it was always my dream to be able to code! I currently code fast, reactive and highly performant web applications. With a keen academic mind, I am always hungry to learn more and build challenging projects. Trained in research, I love data visualization and data modelling.  I am looking for a career change. To know more about me, check my <a href="https://www.linkedin.com/in/abialbon/">LinkedIn Profile</a></p>
                   </div>
               </div>
           </div>
@@ -62,86 +63,225 @@
           <div class="container">
               <div class="subtitle">
                   <quote>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor.
+                    	Not knowing to code felt like my hands were all tied up. It was, as if I lacked a crucial aspect of creative expression.
                   </quote>
               </div>
           </div>
       </div>
   </section>
   
-  <section class="skills is-large">
-      <h1 class="title has-text-centered">Skills</h1>
-      <img src="./assets/skills.svg" alt="">
-      <div id="fcc">
-          <div>
+  <section class="skills is-large" id="skills">
+        <h1 class="title has-text-centered">Skills</h1>
+        <img src="./assets/skills.svg" alt="">
+        <div id="fcc">
+            <div>
               <h1 class="title is-5 has-text-centered">FreeCodeCamp</h1>
-          </div>
-          <div class="fcc-certs">
-              <a href="https://www.freecodecamp.org/abialbon/front-end-certification" target="_blank">
-          <img class="fcc" src="./assets/front-fcc.svg" alt="">
-      </a>
-      <a href="https://www.freecodecamp.org/abialbon/data-visualization-certification" target="_blank">
-          <img class="fcc" src="./assets/react-fcc.svg" alt="">
-      </a>
-      <a href="https://www.freecodecamp.org/abialbon/back-end-certification" target="_blank">
-          <img class="fcc" src="./assets/back-fcc.svg" alt="">
-      </a>
-          </div>
-      </div>
-      <div class="codewars">
-          <h1 class="title is-5 has-text-centered">Codewars</h1>
-          <img src="https://www.codewars.com/users/abialbon_paul/badges/large" alt="">
-      </div>
-      <br>
-      <div class="container">
-          <div class="columns">
+            </div>
+            <div class="fcc-certs">
+            	<a href="https://www.freecodecamp.org/abialbon/front-end-certification" target="_blank"><img class="fcc" src="./assets/front-fcc.svg" alt=""></a>
+        		<a href="https://www.freecodecamp.org/abialbon/data-visualization-certification" target="_blank"><img class="fcc" src="./assets/react-fcc.svg" alt=""></a>
+        		<a href="https://www.freecodecamp.org/abialbon/back-end-certification" target="_blank"><img class="fcc" src="./assets/back-fcc.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="codewars">
+        	<h1 class="title is-5 has-text-centered">Codewars</h1>
+        	<img src="https://www.codewars.com/users/abialbon_paul/badges/large" alt="">
+        </div>
+        <br>
+        <div class="container">
+            <div class="columns">
               <div class="column">
-                  <div class="box">
-                      <div class="title is-4">Readability</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor.</p>
+                  <div class="box skill-box">
+                    	<img class="skill-box-svg" src="./assets/modular.svg" alt="">
+                    	<div class="title is-4">Readability</div>
+                    	<p>I believe code should be easy to read and understand. Style guides and design patterns exist for a reason! Code modularity is key to maintainable code in the long run.</p>
                   </div>
               </div>
               <div class="column">
-                  <div class="box">
-                      <div class="title is-4">Readability</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor.</p>
-                  </div>
+				    <div class="box skill-box">
+						<img class="skill-box-svg" src="./assets/efficient.svg" alt="">
+						<div class="title is-4">Efficient</div>
+						<p>Code efficiency must not be an after thought, it’s a priority. Just because the processors are becoming powerful doesn’t me they should be feed crapy code to run.</p>
+				    </div>
               </div>
               <div class="column">
-                  <div class="box">
-                      <div class="title is-4">Readability</div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor.</p>
-                  </div>
+                    <div class="box skill-box">
+                    	<img class="skill-box-svg" src="./assets/speed.svg" alt="">
+                    	<div class="title is-4">Fast Learning</div>
+                    	<p>I use smart learning techniques to get up and running with new frameworks or tools really fast. The most important thing to learn is to learn how to learn effectively.</p>
+                    </div>
               </div>
           </div>
       </div>
   </section>
   
-  <section class="projects">
+  <section class="projects" id="projects">
       <h1 class="title has-text-centered">Projects</h1>
       <div class="container">
-          <div class="columns is-centered">
-              <div class="column is-one-third">
-                  <div class="box project-card">
-                      <div class="box project-card-header">
+        	<!-- First row -->
+        	<div class="columns is-centered">
+                <div class="column is-one-third">
+                	<div class="box project-card">
+                    	<div class="box project-card-header">
                           <img src="./assets/poll.svg" alt="">
-                      </div>
-                      <div class="project-card-body">
-                          <h1 class="title is-4">PollAce</h1>
-                          <p>A polling app with material design and reactive.</p>
-                          <p class="project-card-body-description"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor. </small></p>
-                        <span class="tag">Node</span>
-                        <span class="tag">React</span>
-                        <span class="tag">Material-UI</span>
-                        <span class="tag">Express</span>
-                      </div>
-                  </div>
-              </div>
-              <div class="column is-one-third"></div>
+                        </div>
+                        <div class="project-card-body">
+                            <h1 class="title is-4">PollAce</h1>
+                            <p>A polling app with material design and beautiful graphs.</p>
+                            <p class="project-card-body-description">
+                            <small>
+                            	This app lets users signup and create poll questions with multiple options. Polls are visible to all but can be created or edited only if logged in. The results are displayed in reactive pie graphs.
+                            </small>
+                            </p>
+                        	<span class="tag">Node</span>
+                        	<span class="tag">React</span>
+                        	<span class="tag">Material-UI</span>
+							<span class="tag">Express</span>
+                        	<span class="tag">MongoDB</span>
+                        	<nav>
+                        		<a href="https://pollace.herokuapp.com/" class="button"><img src="./assets/heroku.svg" alt="Heroku"></a>
+                        		<a href="" class="button"><img src="./assets/github.svg" alt="Github"></a>
+                        	</nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                	<div class="box project-card">
+                    	<div class="box project-card-header">
+                          <img src="./assets/window-surf.svg" alt="">
+                        </div>
+                        <div class="project-card-body">
+                            <h1 class="title is-4">WindowSurf</h1>
+                            <p>A pinterest clone to curate arieal photography</p>
+                            <p class="project-card-body-description">
+                            <small>
+                            This app lets users signup and login with their Twitter accounts. Logged in users can add pics and like pics uploaded by other users. This is build with Vue &amp; Vuex.
+                            </small>
+                            </p>
+                        	<span class="tag">Node</span>
+                        	<span class="tag">Vue</span>
+                        	<span class="tag">Vuex</span>
+							<span class="tag">Express</span>
+                        	<span class="tag">MongoDB</span>
+                        	<nav>
+                        		<a href="" class="button"><img src="./assets/heroku.svg" alt="Heroku"></a>
+                        		<a href="" class="button"><img src="./assets/github.svg" alt="Github"></a>
+                        	</nav>
+                        </div>
+                    </div>	
+                </div>
+            </div> <!-- First row -->
+           
+            <!-- Second row -->
+        	<div class="columns is-centered">
+                <div class="column is-one-third">
+                	<div class="box project-card">
+                    	<div class="box project-card-header">
+                          <img src="./assets/storkbook.svg" alt="">
+                        </div>
+                        <div class="project-card-body">
+                            <h1 class="title is-4">StorkBooks</h1>
+                            <p>A book trading app.</p>
+                            <p class="project-card-body-description">
+                            <small>
+                            	This app lets users signup. Logged in users can add books. They can request books from other users. Requested books can be approved or rejected.
+                            </small>
+                            </p>
+                        	<span class="tag">NodeJS</span>
+                        	<span class="tag">EJS</span>
+                        	<span class="tag">Bulma CSS</span>
+							<span class="tag">Express</span>
+                        	<span class="tag">MongoDB</span>
+                        	<nav>
+                        		<a href="https://storkbooks.herokuapp.com/" class="button"><img src="./assets/heroku.svg" alt="Heroku"></a>
+                        		<a href="" class="button"><img src="./assets/github.svg" alt="Github"></a>
+                        	</nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                	<div class="box project-card">
+                    	<div class="box project-card-header">
+                          <img src="./assets/nightlybar.svg" alt="">
+                        </div>
+                        <div class="project-card-body">
+                            <h1 class="title is-4">NightlyBars</h1>
+                            <p>A nightlife coordination app</p>
+                            <p class="project-card-body-description">
+                            <small>
+                            This app lets users signup and login with their Twitter accounts. Logged in users can search bars in their locality and can indicate their attendance.
+                            </small>
+                            </p>
+                        	<span class="tag">NodeJS</span>
+                        	<span class="tag">EJS</span>
+							<span class="tag">Express</span>
+                        	<span class="tag">MongoDB</span>
+                        	<nav>
+                        		<a href="https://nightlybars.herokuapp.com/" class="button"><img src="./assets/heroku.svg" alt="Heroku"></a>
+                        		<a href="" class="button"><img src="./assets/github.svg" alt="Github"></a>
+                        	</nav>
+                        </div>
+                    </div>	
+                </div>
           </div>
+          <p class="has-text-centered">View all my FCC projects <a href="https://www.freecodecamp.org/abialbon" target="_blank">here</a>. My other personal projects are coming soon.</p>
       </div>
-  </section>
-<!--
+    </section>
+  
+    <section class="blog">
+    	<h1 class="title has-text-centered">Blog</h1>
+    	<h3 class="subtitle has-text-centered">Coming soon...</h3>
+    </section>
+    
+    <section class="contact" id="contact">
+    	<div class="container">
+    		<h1 class="title has-text-centered">Contact</h1>
+    		<div class="columns is-centered is-centered-mobile">
+    			<div class="social-icons column is-half">
+    				<a href="https://www.facebook.com/abialbon.paul" target="_blank"><img class="social-icon" src="./assets/facebook.svg" alt=""></a>
+    				<a href="https://twitter.com/abialbonpaul" target="_blank"><img class="social-icon" src="./assets/twitter.svg" alt=""></a>
+    				<a href="https://www.linkedin.com/in/abialbon/" target="_blank"><img class="social-icon" src="./assets/linkedin.svg" alt=""></a>
+    				<a href="https://github.com/abialbon" target="_blank"><img class="social-icon" src="./assets/github-black.svg" alt=""></a>
+    				<a href="https://codepen.io/dashboard/" target="_blank"><img class="social-icon" src="./assets/codepen.svg" alt=""></a>
+    				<a href="mailto:dr.paulnotes@gmail.com" target="_blank"><img class="social-icon" src="./assets/gmail.svg" alt=""></a>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    
+    <section class="footer">
+    	<div class="container">
+    		<div class="columns">
+    			<div class="column">
+    				<h1 class="title is-5">Credits</h1>
+    				<p>Icons and SVG:</p>
+    				<a href="https://www.flaticon.com/" target="_blank">Flat Icons</a><br>
+    				<a href="https://www.flaticon.com/authors/freepik" target="_blank">FreePik</a><br>
+    				<a href="https://www.flaticon.com/authors/pixel-buddha" target="_blank">Pixel Buddha</a><br>
+    				Logos of programming languages and frameworks are their respective property
+    			</div>
+    			<div class="column">
+    				<h1 class="title is-5">Frameworks</h1>
+    				<a href="https://github.com/VincentGarreau/particles.js/" target="_blank">Particle JS</a><br>
+    				<a href="https://github.com/cferdinandi/smooth-scroll" target="_blank">Smooth-Scroll</a><br>
+    				<a href="https://bulma.io" target="_blank"><img src="https://bulma.io/images/made-with-bulma--dark.png" alt="Made with Bulma" width="128" height="24"></a>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    <script>
+		var scroll = new SmoothScroll('a[href*="#"]', {
+			speed: 1200,
+			easing: 'easeInOutCubic', 
+		});
+		var $navBurger = document.getElementById('navBurger');
+		var $navMenu = document.getElementById('navMenu');
+		$navBurger.addEventListener('click', function() {
+			this.classList.toggle('is-active');
+			$navMenu.classList.toggle('is-active');
+		})
+	</script>
+
   <script>
       console.log("Working!");
       particlesJS('welcome-section', {
@@ -255,6 +395,5 @@
   "retina_detect": true
 })
   </script>
--->
 </body>
 </html>

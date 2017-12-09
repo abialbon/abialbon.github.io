@@ -12,6 +12,11 @@ body {
     font-weight: 600;
 }
 
+.navbar-item:hover {
+	background-color: #3791F9 !important;
+	color: white !important;
+}
+
 .welcome {
     height: 100%;
 }
@@ -23,8 +28,9 @@ body {
 }
 
 .welcome-textbox {
+	position: relative;
     text-align: center;
-    margin-top: 50px;
+    top: 10px;
 }
 
 .extra-info {
@@ -62,6 +68,7 @@ body {
 
 .about p {
     padding-top: 40px;
+	text-align: justify;
 }
 
 .quote {
@@ -92,9 +99,19 @@ body {
 }
 
 .projects {
-    height: 500px;
+    min-height: 500px;
     padding: 50px 0;
     background-color: RGBA(249, 241, 239, 0.3);
+}
+
+.skill-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.skill-box p {
+	text-align: center;
 }
 
 .project-card {
@@ -125,6 +142,58 @@ body {
     margin-bottom: 0 !important;
 }
 
+.project-card-body .tag {
+	margin-bottom: 4px;
+}
+
+.project-card-body nav .button {
+	margin: 4px;
+}
+
+.project-card-body nav a img {
+	width: 20px;
+	margin: 0 4px;
+}
+
 .project-card-header img {
     width: 50px;
+}
+
+.blog {
+	padding: 50px 0;
+}
+
+.social-icons {
+	display: flex;
+	justify-content: center;
+}
+
+.social-icon {
+	width: 50px;
+	margin: 10px;
+	transition: all 0.3s;
+}
+
+.social-icon:hover {
+	transform: translateY(-10px);
+}
+
+.contact {
+	padding: 50px 0;
+	background-color: RGBA(192, 229, 255, 0.10);
+}
+
+.footer {
+	background-color: #202533;
+	color: #B8B8B8;
+}
+
+.footer .title {
+	color: #B8B8B8;
+}
+
+@media screen and (min-width: 770px) {
+	.welcome-textbox {
+		top: 50px;
+	}
 }

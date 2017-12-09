@@ -4,24 +4,257 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/main.css">
+  <title>FullStack Web Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Satisfy" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <nav>
-      <div class="navbar-brand">
-          PaulNotes
+  <nav class="navbar is-primary">
+      <div class="container">
+          <div class="navbar-brand">
+          <a href="#" class="navbar-item"><h1 class="title has-text-white">Paulnotes</h1></a>
+            <button class="button navbar-burger is-primary">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
       </div>
       <div class="navbar-menu">
-          <a href="#" class="navbar-item">About</a>
-          <a href="#" class="navbar-item">Skills</a>
-          <a href="#" class="navbar-item">Projects</a>
-          <a href="#" class="navbar-item">Contact</a>
+         <div class="navbar-end">
+            <a href="#" class="navbar-item">About</a>
+            <a href="#" class="navbar-item">Skills</a>
+            <a href="#" class="navbar-item">Projects</a>
+            <a href="#" class="navbar-item">Contact</a>
+         </div>
+      </div>
       </div>
   </nav>
-  <section>
-      <h1>This site is under construction</h1>
+  <section class="welcome">
+      <div id="welcome-section"></div>
+      <div class="welcome-textbox">
+          <h1 class="title">FULL STACK WEB DEVELOPER</h1>
+          <h3 class="extra-info">who <span>loves</span> winters</h3>
+      </div>
+      <img class="welcome-svg" src="./assets/background.svg" alt="">
   </section>
+  
+  <section class="about">
+      <div class="container">
+          <div class="columns">
+              <div class="column is-one-third">
+                  <img src="./assets/snowflake.svg" alt="">
+              </div>
+              <div class="column">
+                  <div class="about-title">
+                      <h1 class="title">A different kind</h1>
+                      <h3 class="extra-info">I dont <span>run</span> on coffee</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor. Maecenas eu ligula ante. Etiam eu magna faucibus, eleifend dolor non, aliquam neque. Suspendisse potenti. Etiam non dui vestibulum mi aliquam varius. Morbi leo lectus, tempus id laoreet id, sollicitudin a est. Aenean suscipit, magna non tincidunt mollis, magna odio euismod sapien, nec vehicula mi quam eu libero</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="quote hero is-primary is-bold">
+      <div class="hero-body">
+          <div class="container">
+              <div class="subtitle">
+                  <quote>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor.
+                  </quote>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="skills is-large">
+      <h1 class="title has-text-centered">Skills</h1>
+      <img src="./assets/skills.svg" alt="">
+      <div id="fcc">
+          <div>
+              <h1 class="title is-5 has-text-centered">FreeCodeCamp</h1>
+          </div>
+          <div class="fcc-certs">
+              <a href="https://www.freecodecamp.org/abialbon/front-end-certification" target="_blank">
+          <img class="fcc" src="./assets/front-fcc.svg" alt="">
+      </a>
+      <a href="https://www.freecodecamp.org/abialbon/data-visualization-certification" target="_blank">
+          <img class="fcc" src="./assets/react-fcc.svg" alt="">
+      </a>
+      <a href="https://www.freecodecamp.org/abialbon/back-end-certification" target="_blank">
+          <img class="fcc" src="./assets/back-fcc.svg" alt="">
+      </a>
+          </div>
+      </div>
+      <div class="codewars">
+          <h1 class="title is-5 has-text-centered">Codewars</h1>
+          <img src="https://www.codewars.com/users/abialbon_paul/badges/large" alt="">
+      </div>
+      <br>
+      <div class="container">
+          <div class="columns">
+              <div class="column">
+                  <div class="box">
+                      <div class="title is-4">Readability</div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor.</p>
+                  </div>
+              </div>
+              <div class="column">
+                  <div class="box">
+                      <div class="title is-4">Readability</div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor.</p>
+                  </div>
+              </div>
+              <div class="column">
+                  <div class="box">
+                      <div class="title is-4">Readability</div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="projects">
+      <h1 class="title has-text-centered">Projects</h1>
+      <div class="container">
+          <div class="columns is-centered">
+              <div class="column is-one-third">
+                  <div class="box project-card">
+                      <div class="box project-card-header">
+                          <img src="./assets/poll.svg" alt="">
+                      </div>
+                      <div class="project-card-body">
+                          <h1 class="title is-4">PollAce</h1>
+                          <p>A polling app with material design and reactive.</p>
+                          <p class="project-card-body-description"><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et elit a odio sodales tempor. </small></p>
+                        <span class="tag">Node</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Material-UI</span>
+                        <span class="tag">Express</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="column is-one-third"></div>
+          </div>
+      </div>
+  </section>
+<!--
+  <script>
+      console.log("Working!");
+      particlesJS('welcome-section', {
+  "particles": {
+    "number": {
+      "value": 208,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "bottom-left",
+      "random": true,
+      "straight": true,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 868.0624057955,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": false,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+})
+  </script>
+-->
 </body>
 </html>

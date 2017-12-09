@@ -1,0 +1,14 @@
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tablet-Portrait" transform="translate(-234.000000, -87.000000)">
+            <g id="Group-2" transform="translate(234.000000, 87.000000)">
+                <rect id="Rectangle-10" fill="#FC3E26" x="0" y="0" width="256" height="256" rx="12"></rect>
+                <g id="Group" transform="translate(26.000000, 26.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <polygon id="Shape" points="0 126.750209 44.9997902 101 90 126.750209 90 178.249791 44.9997902 204 0 178.249791"></polygon>
+                    <polygon id="Shape" points="115 178.249791 115 126.750209 159.99979 101 205 126.750209 205 178.249791 159.99979 204"></polygon>
+                    <polygon id="Shape" points="58 77.2501045 58 25.7503135 103 2.84217094e-14 148 25.7503135 148 77.2501045 103 103"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
